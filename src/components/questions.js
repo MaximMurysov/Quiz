@@ -35,4 +35,13 @@ export const questions = [
       { answer: "USA", term: false },
     ],
   },
+  {
+    title: "Which city is the capital of Australia?",
+    list: [
+      { answer: "Sydney", term: false },
+      { answer: "Melbourne", term: false },
+      { answer: "Canberra", term: true },
+      { answer: "Perth", term: false },
+    ],
+  },
 ];

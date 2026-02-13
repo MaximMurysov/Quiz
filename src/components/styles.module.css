@@ -10,17 +10,16 @@
   height: 100vh;
 }
 .quizContainer {
-  width: 500px;
-  height: 300px;
+  width: 550px;
+  min-height: 300px;
   border-radius: 5px;
   background: linear-gradient(135deg, #145eb1, #8fc3dd);
   padding: 20px 40px;
 }
 .numberQuestion {
   display: flex;
-
   justify-content: center;
-  gap: 50px;
+  gap: 35px;
 }
 .questionItem {
   width: 35px;
@@ -28,4 +27,45 @@
   border: none;
   border-radius: 50%;
   font-weight: bold;
+  cursor: pointer;
+}
+.active {
+  box-shadow: 0 6px 15px rgba(229, 57, 53, 0.5);
+  background-color: #e53935;
+  color: white;
+  transition: all 0.2s ease;
+}
+.questionTitle {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin-top: 40px;
+  width: 100%;
+}
+.answers {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.answerElem {
+  display: flex;
+  width: 100%;
+  background-color: white;
+  padding: 5px;
+  border-radius: 5px;
+  gap: 10px;
+  padding-left: 10px;
+}
+.numberAnswer {
+  background-color: #2f82df;
+  border-radius: 2px;
+  padding: 2px 5px;
+  border: none;
+  cursor: pointer;
+}
+.answerElemText {
+  color: #0f2f53;
+  font-weight: bold;
+  cursor: pointer;
 }
