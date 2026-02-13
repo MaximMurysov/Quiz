@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.quiz {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.quizContainer {
+  width: 500px;
+  height: 300px;
+  border-radius: 5px;
+  background: linear-gradient(135deg, #145eb1, #8fc3dd);
+  padding: 20px 40px;
+}
+.numberQuestion {
+  display: flex;
+
+  justify-content: center;
+  gap: 50px;
+}
+.questionItem {
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 50%;
+  font-weight: bold;
+}
