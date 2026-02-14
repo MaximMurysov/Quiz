@@ -6,10 +6,12 @@ function QuizApp() {
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [isFinish, setIsFinish] = useState(false);
   const [score, setScore] = useState(0);
+
   const nextAnswer = (term) => {
     if (term) {
       setScore(score + 1);
     }
+
     if (activeQuestion === questions.length - 1) {
       setIsFinish(true);
     } else {
@@ -37,9 +39,9 @@ function QuizApp() {
         </div>
         <>
           {isFinish ? (
-            <div>
-              <h3>Quiz completed</h3>
-              <p>
+            <div className={styles.quizComleted}>
+              <h1>Quiz completed</h1>
+              <p className={styles.quizResult}>
                 Correct answers {score} / {questions.length}
               </p>
               <button className={styles.tryAgain} onClick={tryAgain}>

@@ -16,6 +16,29 @@
   background: linear-gradient(135deg, #145eb1, #8fc3dd);
   padding: 20px 40px;
 }
+.quizComleted {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+  margin-top: 40px;
+  color: #083b71;
+}
+.quizResult {
+  font-weight: bold;
+  font-size: 23px;
+  color: #083b71;
+}
+.tryAgain {
+  padding: 10px 20px;
+  background: linear-gradient(135deg, #b8bec5, #f7f7f7);
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  font-weight: bold;
+  color: #0f2f53;
+}
+
 .numberQuestion {
   display: flex;
   justify-content: center;
