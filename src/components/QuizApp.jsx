@@ -2,6 +2,8 @@ import { useState } from "react";
 import styles from "./styles.module.css";
 import { questions } from "./questions";
 import QuestionNav from "./QuestionNav";
+import QuizCompleted from "./QuizCompleted";
+import QuestionCard from "./QuestionCard";
 function QuizApp() {
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [isFinish, setIsFinish] = useState(false);
@@ -33,37 +35,17 @@ function QuizApp() {
         />
         <>
           {isFinish ? (
-            <div className={styles.quizComleted}>
-              <h1>Quiz completed</h1>
-              <p className={styles.quizResult}>
-                Correct answers {score} / {questions.length}
-              </p>
-              <button className={styles.tryAgain} onClick={tryAgain}>
-                Try again
-              </button>
-            </div>
+            <QuizCompleted
+              score={score}
+              questions={questions}
+              tryAgain={tryAgain}
+            />
           ) : (
-            <>
-              <div className={styles.questionTitle}>
-                <h3>
-                  Question {activeQuestion + 1}/{questions.length}
-                </h3>
-                {questions[activeQuestion].title}
-              </div>
-              <div className={styles.answers}>
-                {questions[activeQuestion].list.map((elem, i) => (
-                  <div key={i} className={styles.answerElem}>
-                    <button className={styles.numberAnswer}>{i + 1}</button>
-                    <p
-                      onClick={() => nextAnswer(elem.term)}
-                      className={styles.answerElemText}
-                    >
-                      {elem.answer}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </>
+            <QuestionCard
+              activeQuestion={activeQuestion}
+              questions={questions}
+              nextAnswer={nextAnswer}
+            />
           )}
         </>
       </div>
