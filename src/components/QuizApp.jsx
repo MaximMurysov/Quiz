@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styles from "./styles.module.css";
 import { questions } from "./questions";
 import QuestionNav from "./QuestionNav";
@@ -25,6 +25,21 @@ function QuizApp() {
     setScore(0);
     setActiveQuestion(0);
   };
+  useEffect(() => {
+    const saved = localStorage.getItem("quiz");
+    if (saved) {
+      const { score, isFinish, activeQuestion } = JSON.parse(saved);
+      setScore(score);
+      setIsFinish(isFinish);
+      setActiveQuestion(activeQuestion);
+    }
+  }, []);
+  useEffect(() => {
+    localStorage.setItem(
+      "quiz",
+      JSON.stringify({ score, isFinish, activeQuestion }),
+    );
+  }, [score, isFinish, activeQuestion]);
   return (
     <div className={styles.quiz}>
       <div className={styles.quizContainer}>
