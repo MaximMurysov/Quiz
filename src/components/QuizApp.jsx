@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styles from "./styles.module.css";
 import { questions } from "./questions";
-
+import QuestionNav from "./QuestionNav";
 function QuizApp() {
   const [activeQuestion, setActiveQuestion] = useState(0);
   const [isFinish, setIsFinish] = useState(false);
@@ -26,17 +26,11 @@ function QuizApp() {
   return (
     <div className={styles.quiz}>
       <div className={styles.quizContainer}>
-        <div className={styles.numberQuestion}>
-          {questions.map((_, i) => (
-            <button
-              onClick={() => setActiveQuestion(i)}
-              key={i}
-              className={`${styles.questionItem} ${i === activeQuestion ? styles.active : ""}`}
-            >
-              {i + 1}
-            </button>
-          ))}
-        </div>
+        <QuestionNav
+          questions={questions}
+          activeQuestion={activeQuestion}
+          setActiveQuestion={setActiveQuestion}
+        />
         <>
           {isFinish ? (
             <div className={styles.quizComleted}>
